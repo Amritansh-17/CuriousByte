@@ -99,7 +99,7 @@ const articles = [
 /* ================= ARTICLE 5 ================= */
 {
     id: 5,
-    title: "How AI Learns to Think",
+    title: "The birth of Artificial Intelligence",
     link: "article_5.html",
     image: "articles_5-header.jpg",
     description: "A simple explanation of how artificial intelligence learns patterns and makes decisions.",
@@ -146,6 +146,7 @@ const articles = [
     ]
 },
 
+/* ================= ARTICLE 7 ================= */
 {
     id: 7,
     title: "Why Do We Dream",
@@ -169,7 +170,138 @@ const articles = [
         "brain activity during dreams",
         "dream mystery"
     ]
-}
+},
 
+/* ================= ARTICLE 8 ================= */
+{
+    id: 8,
+    title: "The Mystery of Kaprekar Constant",
+    link: "article_8.html",
+    image: "articles_8-header.jpg",
+    description: "Explore the fascinating Kaprekar constant (6174), a unique number that emerges when repeatedly rearranging and subtracting digits of four-digit numbers. Discover the mathematical curiosity behind why this process always converges to 6174.",
+    category: "Math",
+    show: "yes",
+    keywords: [
+        "Kaprekar constant",
+        "6174 mystery",
+        "Kaprekar number",
+        "math curiosity",
+        "number theory",
+        "digit rearrangement",
+        "mathematical patterns",
+        "D.R. Kaprekar",
+        "math tricks",
+        "math puzzles"
+    ]
+},
+
+/* ================= ARTICLE 9 ================= */
+{
+    id: 9,
+    title: "The Race to the Moon",
+    link: "article_9.html",
+    image: "articles_9-header.jpg",
+    description: "Discover how the Cold War rivalry between the United States and the Soviet Union led to one of humanity’s greatest achievements: landing on the Moon in 1969.",
+    category: "Space",
+    show: "yes",
+    keywords: [
+        "moon landing history",
+        "space race",
+        "apollo 11 mission",
+        "cold war space exploration",
+        "Neil Armstrong",
+        "Buzz Aldrin",
+        "NASA Apollo program",
+        "Soviet space program",
+        "moon exploration",
+        "space history"
+    ]
+},
+
+/* ================= ARTICLE 10 ================= */
+{
+    id: 10,
+    title: "Why Do We Have Calendars",
+    link: "article_10.html",
+    image: "articles_10-header.jpg",
+    description: "Discover why calendars exist, how ancient civilizations tracked time, and why modern society depends on calendars to organize life, science, and history.",
+    category: "History",
+    show: "yes",
+    keywords: [
+        "why do we have calendars",
+        "history of calendars",
+        "calendar origin",
+        "gregorian calendar",
+        "julian calendar",
+        "ancient timekeeping",
+        "lunar calendar",
+        "solar calendar",
+        "why leap years exist",
+        "time measurement history",
+        "how calendars were invented",
+        "egyptian calendar",
+        "roman calendar",
+        "tracking time ancient civilizations"
+    ]
+},
+
+/* ================= ARTICLE 11 ================= */
+{
+    id: 11,
+    title: "The Secret Life of Bees",
+    link: "article_11.html",
+    image: "articles_11-header.jpg",
+    description: "Discover the secret life of bees, their role in pollination, hive society, communication, and the challenges they face in the modern world.",
+    category: "Nature",
+    show: "no",
+    keywords: [
+        "bees",
+        "honeybees",
+        "pollination",
+        "bee colony",
+        "queen bee",
+        "worker bees",
+        "drone bees",
+        "waggle dance",
+        "bee communication",
+        "colony collapse disorder",
+        "bee threats",
+        "bee protection",
+        "urban beekeeping",
+        "bee culture",
+        "importance of bees",
+        "save the bees",
+        "bee ecology",
+        "bee biodiversity"
+    ]
+},
+
+/* ================= ARTICLE 12 ================= */
+{
+    id: 12,
+    title: "The Quantum Future",
+    link: "article_12.html",
+    image: "articles_12-header.jpg",
+    description: "Explore the future of quantum technology, from quantum computers and communication to breakthroughs that could transform science, medicine, and society.",
+    category: "Future",
+    show: "no",
+    keywords: [
+        "quantum future",
+        "quantum computing",
+        "quantum communication",
+        "quantum sensors",
+        "quantum mechanics",
+        "quantum technology",
+        "quantum advantage",
+        "quantum supremacy",
+        "quantum breakthroughs",
+        "future of computing",
+        "quantum cryptography",
+        "quantum research",
+        "quantum revolution",
+        "quantum innovation",
+        "quantum science"
+    ]
+}
 
 ];
