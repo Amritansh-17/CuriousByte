@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curious Byte | Library</title>
+
+    <script src="keywords.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f8fbff;
+            color: #0f172a;
+            padding: 40px 8%;
+        }
+
+        /* BACK */
+        .back {
+            margin-bottom: 20px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #1e88ff;
+            font-weight: bold;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 44px;
+        }
+
+        .header h1 span {
+            color: #1e88ff;
+        }
+
+        .header p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* SEARCH */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 15px 55px 15px 20px;
+            border-radius: 30px;
+            border: 2px solid #dbeafe;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: #1e88ff;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #resultsText {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* CATEGORY */
+        .category {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .category h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-left: 4px solid black; /* all bars black */
+            padding-left: 10px;
+        }
+
+        /* LINKS */
+        .article-link {
+            display: block;
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #0f172a;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.2s;
+        }
+
+        .article-link:hover {
+            transform: translateX(6px);
+            color: #1e88ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACK -->
+    <div class="back">
+        <a href="articles.html">← Back to Articles</a>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Article <span>Library</span></h1>
+        <p>All articles organized by category</p>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search articles..."
+        >
+
+        <button class="search-btn" onclick="renderLibrary(true)">
+            🔍
+        </button>
+
+    </div>
+
+    <div id="resultsText"></div>
+
+    <div id="libraryContainer"></div>
+
+    <script>
+
+        const container = document.getElementById("libraryContainer");
+        const input = document.getElementById("searchInput");
+        const resultsText = document.getElementById("resultsText");
+
+        function renderLibrary(isSearch = false) {
+
+            let filtered = articles;
+
+            const query = input.value.trim().toLowerCase();
+
+            if (isSearch && query !== "") {
+
+                filtered = articles.filter(article => {
+
+                    return article.title.toLowerCase().includes(query) ||
+
+                        article.keywords.some(keyword =>
+                            keyword.toLowerCase().includes(query)
+                        );
+                });
+
+                if (filtered.length > 0) {
+
+                    let displayQuery = query;
+
+                    if (displayQuery.length > 25) {
+                        displayQuery =
+                            displayQuery.substring(0, 25) + "...";
+                    }
+
+                    resultsText.textContent =
+                        `Results for "${displayQuery}"`;
+
+                } else {
+
+                    resultsText.textContent =
+                        "The article couldn't be found";
+                }
+
+            } else {
+
+                resultsText.textContent = "";
+            }
+
+            container.innerHTML = "";
+
+            const categories = [
+                { name: "Technology", icon: "💻", className: "tech" },
+                { name: "Programming", icon: "🧑‍💻", className: "programming" },
+                { name: "AI", icon: "🤖", className: "ai" },
+
+                { name: "Science", icon: "🔬", className: "science" },
+                { name: "Space", icon: "🚀", className: "space" },
+
+                { name: "History", icon: "📜", className: "history" },
+                { name: "Internet", icon: "🌐", className: "internet" },
+
+                { name: "Games", icon: "🎮", className: "games" },
+                { name: "Math", icon: "➗", className: "math" },
+
+                { name: "Psychology", icon: "🧠", className: "psychology" },
+                { name: "Nature", icon: "🌿", className: "nature" },
+
+                { name: "Future", icon: "🔮", className: "future" }
+            ];
+
+            categories.forEach(category => {
+
+                const articlesInCategory = filtered.filter(article =>
+                    article.category === category.name
+                );
+
+                if (articlesInCategory.length > 0) {
+
+                    let html = `
+                        <div class="category ${category.className}">
+                            <h2>${category.icon} ${category.name}</h2>
+                    `;
+
+                    articlesInCategory.forEach(article => {
+
+                        html += `
+                            <a class="article-link"
+                               href="${article.link}">
+                                ${article.title}
+                            </a>
+                        `;
+                    });
+
+                    html += `</div>`;
+
+                    container.innerHTML += html;
+                }
+            });
+        }
+
+        input.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                renderLibrary(true);
+            }
+
+        });
+
+        input.addEventListener("input", function () {
+
+            if (input.value.trim() === "") {
+                renderLibrary(false);
+            }
+
+        });
+
+        /* Initial Load */
+        renderLibrary();
+
+    </script>
+
+</body>
+
+</html>
