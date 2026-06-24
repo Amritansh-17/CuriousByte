@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png"
+
+    <meta name="description"
+        content="Discover what happens when you run a program, from source code execution to machine instructions, memory allocation, and how the operating system brings software to life.">
+
+    <title>What Happens When You Run a Program | Curious Byte</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f8fbff;
+            color: #0f172a;
+            line-height: 1.8;
+        }
+
+        .top {
+            padding: 25px 8%;
+        }
+
+        .top a {
+            text-decoration: none;
+            color: #1e88ff;
+            font-weight: bold;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            margin-top: 35px;
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-size: 18px;
+            color: #334155;
+        }
+
+        .box {
+            background: #e0f2fe;
+            border-left: 4px solid #1e88ff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+        .learn-more {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #dbeafe;
+        }
+
+        .learn-more a {
+            display: block;
+            margin: 8px 0;
+            color: #1e88ff;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .back-top {
+            text-align: center;
+            margin: 60px 0 10px;
+        }
+
+        .back-top a {
+            text-decoration: none;
+            color: #1e88ff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <div class="top">
+        <a href="library.html">← Back to Articles</a>
+    </div>
+
+    <img src="articles_14-header.png" class="hero-img" alt="Program Execution">
+
+    <div class="content">
+
+        <h1>What Happens When You Run a Program</h1>
+
+        <p>
+            When you click “Run” on a program, it feels instant. But inside your computer, a complex chain of events
+            begins — involving the operating system, memory, CPU, and thousands of tiny operations working together.
+            Your simple action triggers a deep system-wide process.
+        </p>
+
+        <p>
+            To understand it properly, we need to follow the journey step by step — from source code to machine
+            execution.
+        </p>
+
+        <h2>1. The program starts as code</h2>
+
+        <p>
+            Everything begins with source code written in a programming language like Python, Java, or C++.
+            This code is human-readable instructions, but computers cannot understand it directly.
+        </p>
+
+        <div class="box">
+            Source code is just text — it must be translated before a computer can execute it.
+        </div>
+
+        <h2>2. Compilation or interpretation</h2>
+
+        <p>
+            Depending on the language, the code is either compiled or interpreted.
+        </p>
+
+        <p>
+            In compiled languages (like C++), a compiler converts the entire program into machine code before execution.
+            In interpreted languages (like Python), the interpreter reads and executes code line by line.
+        </p>
+
+        <h2>3. The operating system steps in</h2>
+
+        <p>
+            When you run a program, the operating system (Windows, Linux, Android, etc.) takes control. It creates a
+            process — an isolated container for your program.
+        </p>
+
+        <p>
+            This process gets its own memory space, system resources, and priority for CPU usage.
+        </p>
+
+        <h2>4. Memory allocation begins</h2>
+
+        <p>
+            The system assigns memory (RAM) to store variables, instructions, and temporary data. This includes:
+        </p>
+
+        <p>
+            stack memory (for function calls) and heap memory (for dynamic data).
+        </p>
+
+        <div class="box">
+            Every running program gets its own protected memory space to avoid crashing other programs.
+        </div>
+
+        <h2>5. The CPU starts executing instructions</h2>
+
+        <p>
+            The CPU (central processing unit) fetches instructions from memory, decodes them, and executes them in a
+            cycle known as the fetch-decode-execute cycle.
+        </p>
+
+        <p>
+            This happens millions or even billions of times per second in modern processors.
+        </p>
+
+        <h2>6. Instructions become actions</h2>
+
+        <p>
+            Each machine instruction tells the CPU to perform a small task — add numbers, move data, compare values, or
+            interact with memory.
+        </p>
+
+        <p>
+            These tiny operations combine to form the behavior of your entire application.
+        </p>
+
+        <h2>7. Input and output systems activate</h2>
+
+        <p>
+            If your program needs input (keyboard, mouse, touchscreen) or output (screen, sound), it communicates with
+            hardware through system calls managed by the operating system.
+        </p>
+
+        <h2>8. The program runs as a process</h2>
+
+        <p>
+            While running, the program exists as an active process. The OS schedules CPU time between multiple processes
+            so everything runs smoothly — from games to background apps.
+        </p>
+
+        <div class="box">
+            Your computer is constantly multitasking between hundreds of processes at once.
+        </div>
+
+        <h2>9. Errors and bugs during execution</h2>
+
+        <p>
+            If something goes wrong — like invalid memory access or division by zero — the operating system may stop the
+            program or throw an error.
+        </p>
+
+        <p>
+            These issues are what programmers call “bugs,” and they are detected either during compilation or runtime.
+        </p>
+
+        <h2>10. Program ends and memory is freed</h2>
+
+        <p>
+            When the program finishes, the operating system cleans up. It releases memory, closes files, and removes the
+            process from active memory.
+        </p>
+
+        <p>
+            This ensures your system stays fast and does not run out of resources.
+        </p>
+
+        <h2>The invisible magic behind computing</h2>
+
+        <p>
+            What feels like a single click is actually a carefully coordinated system of hardware and software working
+            together. From code to CPU instructions, every program follows this invisible journey.
+        </p>
+
+        <div class="box">
+            Running a program is not magic — it is layers of logic built on top of hardware engineering.
+        </div>
+
+        <h2>Why this matters</h2>
+
+        <p>
+            Understanding what happens when you run a program helps you become a better programmer. It explains why
+            programs crash, how memory works, and how performance is optimized.
+        </p>
+
+        <p>
+            Every line of code you write eventually becomes electrical signals inside a processor.
+        </p>
+
+        <!-- LEARN MORE -->
+        <div class="learn-more">
+
+            <h2>Learn More</h2>
+
+            <a href="https://en.wikipedia.org/wiki/Computer_program" target="_blank">
+                🔗 Wikipedia - Computer Program
+            </a>
+
+            <a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">
+                🔗 Wikipedia - Process (Computing)
+            </a>
+<div style="
+    color:#111827;
+    margin:25px 0;
+    font-size:16px;
+    text-align:center;
+    font-weight:600;
+    letter-spacing:0.3px;
+">
+    Written by Amritansh Srivastava • Curious Byte
+</div>
+        </div>
+
+        <!-- BACK TO TOP -->
+        <div class="back-top">
+            <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                ↑ Back to Top
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made with curiosity ❤️ • Curious Byte
+    </div>
+
+</body>
+
+</html>
